@@ -1,0 +1,102 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url('IRANSANS(FANUM).TTF');
+  }
+  
+  *{
+      padding: 0;
+      margin: 0;
+      
+      /* font-size: 16px; */
+      box-sizing: content-box;
+      font-family: myFirstFont;
+  }
+
+  .first, .second, .third{
+      text-align: center!important;
+      margin: auto;
+      color:#505a5f;
+      padding: 3rem 2rem;
+  
+  }
+  .second, .third{
+      padding: 3rem 6rem 4rem 6rem;
+  
+  }
+  #top-header-branch{
+      margin: auto;	
+      font-size: 3rem;
+      display: inline-block;
+      text-align: center;
+  }
+  
+  .second p ,.third p{
+      margin: 2rem 0;
+  }
+  .blue-box{
+      background: linear-gradient(90deg, rgb(49 97 205) 0%, rgb(6 54 165) 100%);
+      box-shadow: 0 0 .5rem rgba(0,0,0,0.5);
+      color: white!important;
+      
+  }
+  .rank-box{
+      background: rgba(255,255,255,1);
+      border-radius: 1rem;
+      box-shadow: 0 0 .5rem rgba(0,0,0,.3)
+  }
+  #chart-box{
+      padding: 0;
+  
+  
+  }
+  
+  
+  #uni-box{
+      padding: 0;
+  
+  
+  }
+  .nav-pills{
+      border-radius: 0;
+  }
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+      color: white;
+      border-radius: 0;
+      background: linear-gradient(90deg, rgb(49 97 205) 0%, rgb(6 54 165) 100%);
+  }
+  
+  #unilogo{
+      width:50px;
+  }
+  #introduce-site-text{
+      padding-top: 2rem;
+  }
+  @media screen and (max-width: 480px) {
+    #top-header-branch{
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      font-weight: 900;
+    }
+    #introduce-site-img img{
+        width:100% !important;
+    }
+    .customcontainer{
+        padding: 0 2rem;
+    }
+    .second, .third{
+        padding: 3rem 2rem 4rem 2rem!important;
+
+    }
+    .second h1, .third h1{
+        font-size: 1.80rem;
+        font-weight: 800;
+    }
+    #introduce-site-text h2 {
+       
+        text-align: center!important;
+    
+    }
+    #introduce-site-text{
+        padding-top: 0;
+    }
+  }

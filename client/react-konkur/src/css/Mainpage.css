@@ -1,0 +1,253 @@
+body{
+  padding:0;  
+  margin: 0;
+  color:#505a5f;
+
+  box-sizing: content-box;
+}
+.category-box{
+    margin-top: 1rem;
+}
+.category-box ul{
+    margin: 2rem 0 0 0;
+}
+.categ-item{
+    border:none;
+    background: linear-gradient(90deg, rgb(49 97 205) 0%, rgb(6 54 165) 100%);
+    display: inline;
+    color: white;
+    padding: .5rem 1rem;
+    border-radius: .6rem;
+    margin-left: 1rem;
+}
+#top-header{
+    text-align: center;
+    font-size: 3.5rem;
+    display: inline-block;
+    font-weight: 900;
+    padding-bottom: 1.5rem;
+}
+#top-desc{
+    color: white;
+    font-size: 1.5rem;
+    padding: .6rem 2rem;
+    border-radius: 1rem;
+    display: none;
+}
+#top-img{
+    width: 50%;
+}
+.main-desc{
+    margin: 6rem 0 0 0 ;
+    text-align: center;
+    
+}
+#start-btn{
+    border-radius: 5rem;
+    border: none;
+    margin: auto;
+    padding: .5rem 1.5rem;
+}
+.aboutimg{
+    width: 50%;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    filter: grayscale(100%);
+}
+.aboutname{
+    font-weight: 700;
+    margin: .6rem 0;
+}
+.aboutimg:hover{
+    filter: grayscale(0);
+}
+
+.aboutname , .aboutrole{
+    margin: 0;
+}
+.aboutname{
+    font-weight: 700;
+    margin: .6rem 0;
+}
+.aboutsecond>p{
+    margin: 2rem 0;
+}
+.justifytext{
+    text-align: justify;
+}
+.aboutsecond{
+    text-align: center!important;
+    margin: auto;
+    color:#505a5f;
+    padding: 3rem 6rem 4rem 6rem;
+
+}
+.introduce-site{
+    padding: 2rem;
+}
+.customcontainer .row{
+    padding:2rem;
+
+}
+.col-md-6{
+    padding: 0;
+}
+#introduce-site-text {
+    width: 100%;
+    height: 100%;
+    text-align: justify;
+
+}
+.person{
+    margin: 1rem 0;
+    padding:0;
+}
+.customcontainer{
+    padding: 1rem 3rem;
+}
+footer, .pt-4{
+    padding: 0!important;
+    box-shadow: none!important;
+}
+#introduce-site-text h2{
+    text-align: right;
+}
+.col-md-6{
+    width: 100%;
+    
+}
+#introduce-site-img img{
+    width: 80%;
+    
+}
+header{
+    padding:0;
+}
+header div{
+    margin: 0;
+}
+header .row{
+    margin: 0;
+}
+header .row div{
+    padding: 0;
+}
+.menu-bar{
+    display: inline-block;
+    float: right;
+    margin:2rem 0 0 0 ;
+    padding-right:1rem ;
+}
+.menu-bar ul li{
+    display: inline-block;
+    padding: .3rem 0;
+    text-align: center;
+    margin-left:10px;
+    width: 80px; 
+    background: linear-gradient(90deg, rgb(49 97 205) 0%, rgb(6 54 165) 100%);
+    color: white;
+    border-radius: 10px;
+
+}
+#search-bar{
+	height: 3rem;
+	position: relative;
+    display: inline-block;
+    margin-top: 1.5rem;
+    /* margin: 20px 0 0 20px; */
+    
+}
+
+#search-bar__btn{
+    border: none;
+	position: absolute;
+	right: 0;
+
+	padding: 0 1rem;
+	height: 100%;
+	color: #fff;
+	border-radius: 5rem;
+    background: linear-gradient(90deg, rgb(49 97 205) 0%, rgb(6 54 165) 100%);
+}
+#search-bar__bar{
+	width: 100%;
+	height: 100%;
+	border-radius: 5rem;
+}
+#search-bar__input{
+    border: none;
+    height: 100%;
+    width: 90%;
+	border-radius: 5rem;
+}
+#search-bar-content{
+    height: 100%;
+    width: 60%;
+    margin: auto;
+    position: relative;
+    box-shadow: 0 0 .3rem rgba(0,0,0,.6);
+    border-radius: 5rem;
+}
+#chart-box{
+	padding: 0;
+
+
+}
+
+.tab-pane{
+    width:100%;
+
+}
+.tab-pane canvas{
+    border:1px solid #333;
+}
+#chart-table{
+    padding: 0;
+}
+.nav-pills{
+	border-radius: 0;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+	color: white;
+	border-radius: 0;
+	background: linear-gradient(90deg, rgb(49 97 205) 0%, rgb(6 54 165) 100%);
+}
+.chart-table-row{
+    background: rgba(255,255,255,1);
+	border-radius: 1rem;
+	box-shadow: 0 0 .5rem rgba(0,0,0,.3)
+}
+
+@media screen and (max-width: 480px) {
+    #top-header{
+      font-size: 2rem;
+      font-weight: 900;
+    }
+    #top-desc{
+        font-size: .7rem;
+        font-weight: 900; 
+    }
+    .customcontainer{
+        padding: 0 2rem;
+    }
+    .aboutsecond{
+        padding: 3rem 2rem 4rem 2rem;
+
+    }
+    .menu-bar{
+        margin:2rem 0 0 0;
+    }
+    .menu-bar li{
+        width: 80px!important;
+        font-size: .6rem;
+        font-weight: 800;
+    }
+    #introduce-site-text {
+       
+        text-align: center;
+    
+    }
+    #search-bar{
+        margin-top: 0;
+    }
+  }
