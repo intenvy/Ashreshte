@@ -130,3 +130,5 @@ dmypy.json
 
 # IDE
 .idea/**
+
+/client/react-konkur/node_modules
