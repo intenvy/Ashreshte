@@ -14,6 +14,8 @@ import {
 	ThemeProvider,
 } from "@material-ui/core/styles";
 import Colors from "./utilities/Colors";
+import Chair from "./pages/Chair";
+import University from "./pages/University";
 const myTheme = createMuiTheme({
 	direction: "rtl",
 	palette: {
@@ -25,17 +27,24 @@ function App() {
 	return (
 		<React.Fragment>
 			<ThemeProvider theme={myTheme}>
-				<Header />
 				<Router>
+					<Header />
 					<Switch>
-						<Route path="/start">
-							<h1>Start</h1>
+						<Route path="/uni">
+							<University />
 						</Route>
-						<Route path="/uni/:name">
-							<h1>Uni</h1>
+						<Route path="/major">
+							<h1>major</h1>
+						</Route>
+						<Route path="/aboutus">
+							<h1>about us</h1>
+						</Route>
+
+						<Route path="/chair">
+							<Chair />
 						</Route>
 						<Route path="/">
-							<h1>Start</h1>
+							<h1>landing Page</h1>
 						</Route>
 					</Switch>
 				</Router>

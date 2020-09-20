@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Colors from "../utilities/Colors";
 import { makeStyles, Tabs, Tab, Typography } from "@material-ui/core";
 import Searchbar from "./Searchbar";
 import commonStyles from "../utilities/CommonStyles";
+import { Link, useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
 	container: {
+		position: "fixed",
 		paddingRight: 70,
 		paddingLeft: 70,
 		height: 76,
@@ -28,13 +30,36 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header(props) {
 	const classes = useStyles();
-	const [tabValue, setTabValue] = useState(0);
+	const history = useHistory();
+	const [tabValue, setTabValue] = useState(-1);
+
+	useEffect(() => {
+		switch (tabValue) {
+			case 0:
+				history.push("/uni");
+				break;
+			case 1:
+				history.push("/major");
+				break;
+			case 2:
+				history.push("/aboutus");
+				break;
+			case 3:
+				history.push("/support");
+				break;
+		}
+		// if (tabValue == -1) {
+		// 	setTabValue(0);
+		// }
+	}, [tabValue]);
+
 	return (
 		<Grid className={classes.container} container>
 			<div className={classes.centerVertical}>
 				<Grid container justify="space-between">
 					<div style={{ display: "flex" }}>
 						<img
+							onClick={() => history.push("/")}
 							className={classes.image}
 							src="https://img.techpowerup.org/200919/download-superman-logo-png-hd179.png"></img>
 
@@ -48,22 +73,26 @@ export default function Header(props) {
 							}}>
 							<Tab
 								className={classes.tab}
+								disableRipple
 								style={{ height: "100%" }}
 								label={<Typography variant="h6">دانشگاه ها</Typography>}
 								value={0}
 							/>
 							<Tab
 								className={classes.tab}
+								disableRipple
 								label={<Typography variant="h6">رشته ها</Typography>}
 								value={1}
 							/>
 							<Tab
 								className={classes.tab}
+								disableRipple
 								label={<Typography variant="h6">درباره ما</Typography>}
 								value={2}
 							/>
 							<Tab
 								className={classes.tab}
+								disableRipple
 								label={<Typography variant="h6">حمایت</Typography>}
 								value={3}
 							/>
