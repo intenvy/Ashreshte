@@ -7,11 +7,12 @@ import MainPage from "./components/MainPage"
 import { BrowserRouter as Router, Switch, Route,Link } from "react-router-dom";
 import HeaderComp from './components/HeaderComp';
 import Startpage from './components/StartPage';
+import getMajorById from './services/getMajorById'
 
+console.log(getMajorById(12))
 function App() {
   return (
     <Router>
-      
       <div className="App" dir="rtl">
         <HeaderComp />
         <Route path="/" component={BranchPage} exact />

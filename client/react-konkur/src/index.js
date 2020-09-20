@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 // import 'mdbreact/dist/css/mdb.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+// import '@fontawesome/fontawesome-free/css/all.min.css';
 import { BrowserRouter , Router, Switch, Route,Link } from "react-router-dom";
 
 import 'bootstrap/dist/js/bootstrap.js';
