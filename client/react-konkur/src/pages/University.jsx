@@ -19,7 +19,7 @@ import UniversityName from "../components/UniversityName";
 import Transportation from "../components/Transportaiton";
 import Migration from "../components/Migration";
 import Enterance from "../components/Enterance";
-import UniversityHeader from "../components/UniversityHeader";
+import ProfileHeader from "../components/ProfileHeader";
 import getUniversityById from "../services/getUniversityById";
 import Chair from "./Chair";
 
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	container: {
 		paddingRight: 180 + 16,
-		paddingTop: 76 + 16,
+		paddingTop: 32,
 	},
 }));
 
@@ -126,6 +126,12 @@ export default function University(props) {
 
 	const universityContent = (
 		<Container className={classes.container}>
+			<Grid container justify="center" style={{ marginBottom: 32 }}>
+				<Typography variant="p" wrap>
+					{infoData.description}
+				</Typography>
+			</Grid>
+
 			<Grid container justify="center">
 				<Grid container justify="center" item xs={4}>
 					<ScrollLink name="کنکور" scrollTo={enteranceRef} />
@@ -197,21 +203,11 @@ export default function University(props) {
 					/>
 				</div>
 			</Fade>
-			{selectedChairId == -1 && <UniversityHeader data={infoData} />}
+			<ProfileHeader data={infoData} />
 			<button
 				ref={headerRef}
 				style={{ visibility: "hidden", width: 0, height: 0 }}></button>
 			{showPageContent(selectedChairId, chairsData)}
-
-			<h1 style={{ marginRight: 400 }}>{selectedChairId}</h1>
-			{/* {chairsData[selectedChairId] != undefined && (
-				<Chair
-					transportationData={chairsData[selectedChairId].transportaion} //SPELL IS INCORRECT
-					infoData={chairsData[selectedChairId].info}
-					enteranceData={chairsData[selectedChairId].entrance}
-					migrationData={chairsData[selectedChairId].migration}
-				/>
-			)} */}
 		</React.Fragment>
 	);
 }

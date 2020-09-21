@@ -16,6 +16,7 @@ import {
 import Colors from "./utilities/Colors";
 import Chair from "./pages/Chair";
 import University from "./pages/University";
+import Major from "./pages/Major";
 import MainPage from "./skan/components/MainPage";
 const myTheme = createMuiTheme({
 	direction: "rtl",
@@ -36,8 +37,8 @@ function App() {
 						<Route path="/uni/:id">
 							<University setIsHeaderTransparent={setIsHeaderTransparent} />
 						</Route>
-						<Route path="/major">
-							<h1>major</h1>
+						<Route path="/major/:id">
+							<Major setIsHeaderTransparent={setIsHeaderTransparent} />
 						</Route>
 						<Route path="/aboutus">
 							<h1>about us</h1>

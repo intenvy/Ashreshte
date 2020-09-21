@@ -1,7 +1,7 @@
 import React from "react";
 import { Avatar, Typography } from "@material-ui/core";
 
-export default function UniversityHeader(props) {
+export default function ProfileHeader(props) {
 	const data = props.data;
 	return (
 		<div style={{ position: "relative", paddingBottom: 75 }}>
