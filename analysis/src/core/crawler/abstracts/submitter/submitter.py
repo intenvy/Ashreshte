@@ -25,7 +25,7 @@ class DataSubmitter(ABC):
         # Cursor and connection are always alive
         # So it simply executes queries with the cursor
         query = self._insert_query_builder(table, stack)
-        self._engine.force_open_and_execute(query)
+        self._engine.execute(query)
         if not keep_alive:
             self.disconnect()
 

@@ -3,6 +3,7 @@ from abc import ABC, abstractmethod
 from functools import wraps
 from sqlite3 import connect as sqlite_connection, Connection as SqliteConnection, Cursor as SqliteCursor
 from typing import Optional, Callable, Union
+from analysis.src.utils.string.stringify import Stringifyable
 
 # Internal
 from .query import Query
@@ -114,7 +115,7 @@ class SqliteEngine(SqlDataBaseEngine):
 
     def close_connection(self) -> None:
         if self.has_active_connection:
-            self._connection.disconnect()
+            self._connection.close()
             self._connection = None
 
     @property

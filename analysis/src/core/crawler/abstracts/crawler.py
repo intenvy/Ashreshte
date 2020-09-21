@@ -13,13 +13,14 @@ class Crawler(ABC):
 
     __slots__ = [
         'fetcher', 'submitter', '_queue', '_submission_thread', '_is_crawling',
-        'submissions', 'enqueued_submissions'
+        'submissions', 'enqueued_submissions', 'task_lock', 'submission_lock'
     ]
 
     @abstractmethod
     def __init__(self):
-        # self._submitter_lock = Lock()
         self._queue = Queue()
+        self.task_lock = Lock()
+        self.submission_lock = Lock()
         self._submission_thread: Optional[Thread] = None
         self._is_crawling = False
         self.submissions = 0
@@ -36,14 +37,16 @@ class Crawler(ABC):
             self.submitter.submit(submission[1], submission[0])
 
     def _submission_loop(self):
-        self.submitter.connect()
-        while True:
-            self._do_submission()
-            if not self._is_crawling:
+        with self.submission_lock as lock:
+            self.submitter.connect()
+            while True:
                 self._do_submission()
-                self.submitter.commit()
-                break
-            time_sleep(1)
+                if not self._is_crawling:
+                    self._do_submission()
+                    self.submitter.commit()
+                    break
+                time_sleep(0.5)
+            self.submitter.disconnect()
 
     def start_submission(self):
         self._submission_thread = Thread(target=self._submission_loop)
