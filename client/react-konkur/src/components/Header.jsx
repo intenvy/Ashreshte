@@ -12,7 +12,11 @@ const useStyles = makeStyles((theme) => ({
 		paddingRight: 70,
 		paddingLeft: 70,
 		height: 76,
-		backgroundColor: Colors.primary,
+		//backgroundColor: Colors.primary,
+		//opacity: "50%",
+		transition: "all 1s ease",
+		WebkitTransition: "all 1s ease",
+		MozTransition: "all 1s ease",
 		width: "100%",
 	},
 	image: {
@@ -55,7 +59,14 @@ export default function Header(props) {
 	}, [tabValue]);
 
 	return (
-		<Grid className={classes.container} container>
+		<Grid
+			className={classes.container}
+			container
+			style={{
+				backgroundColor: props.transparent
+					? Colors.primary + "00"
+					: Colors.primary,
+			}}>
 			<div className={classes.centerVertical}>
 				<Grid container justify="space-between">
 					<div style={{ display: "flex" }}>

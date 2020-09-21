@@ -17,10 +17,21 @@ export default function UniversityMigration(props) {
 			</Grid>
 			<Grid container spacing={5}>
 				<Grid item container xs={6}>
-					<PieChart data={totalMigration} labels={["ایران", "خارج"]} />
+					<StackedBarChart
+						data={data}
+						title="میزان اپلای"
+						xAxesName="سال کنکور"
+						yAxesName="تعداد افراد"
+					/>
 				</Grid>
 				<Grid item container xs={6}>
-					<StackedBarChart data={data} />
+					<StackedBarChart
+						data={data}
+						showPercentage
+						title="درصد اپلای"
+						xAxesName="سال کنکور"
+						yAxesName="درصد افراد"
+					/>
 				</Grid>
 			</Grid>
 		</Container>

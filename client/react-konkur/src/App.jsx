@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 // import BranchPage from "./components/BranchPage";
@@ -25,14 +25,16 @@ const myTheme = createMuiTheme({
 	},
 });
 function App() {
+	const [isHeaderTransparent, setIsHeaderTransparent] = useState(true);
+
 	return (
 		<React.Fragment>
 			<ThemeProvider theme={myTheme}>
 				<Router>
-					<Header />
+					<Header transparent={isHeaderTransparent} />
 					<Switch>
 						<Route path="/uni">
-							<University />
+							<University setIsHeaderTransparent={setIsHeaderTransparent} />
 						</Route>
 						<Route path="/major">
 							<h1>major</h1>

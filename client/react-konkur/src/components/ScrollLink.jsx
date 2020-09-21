@@ -8,7 +8,8 @@ export default function ScrollLink(props) {
 	return (
 		<Paper
 			onClick={() => {
-				window.scrollTo(0, scrollDest.current.offsetTop - 80);
+				// window.scrollTo(0, scrollDest.current.offsetTop - 80);
+				scrollDest.current.scrollIntoView({ behavior: "smooth" });
 			}}
 			style={{
 				cursor: "pointer",

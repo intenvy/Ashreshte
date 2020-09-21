@@ -1,5 +1,11 @@
 import React from "react";
-import { Container, Drawer, makeStyles, Typography } from "@material-ui/core";
+import {
+	Container,
+	Drawer,
+	makeStyles,
+	Typography,
+	Divider,
+} from "@material-ui/core";
 import Colors from "../utilities/Colors";
 import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
@@ -14,9 +20,39 @@ const useStyles = makeStyles((theme) => ({
 export default function SideNavigation(props) {
 	const classes = useStyles();
 
-	function createMajorList(majorsData) {}
+	const majorList = [
+		{
+			name: "مهندسی کامپیوتر",
+		},
+		{
+			name: "مهندسی صنایع",
+		},
+		{
+			name: "مهندسی مکانیک",
+		},
+		{
+			name: "مهندسی برق",
+		},
+	];
+
+	function createMajorList(majorList) {
+		const list = majorList.map((major) => (
+			<Link
+				to="/uni/chair"
+				style={{
+					marginTop: 8,
+					marginBottom: 8,
+					textDecoration: "none",
+					color: "white",
+					textAlign: "center",
+				}}>
+				{major.name}
+			</Link>
+		));
+		return list;
+	}
 	return (
-		<React.Fragment>
+		<div>
 			<Drawer
 				classes={{ paper: classes.paper }}
 				variant="permanent"
@@ -24,13 +60,22 @@ export default function SideNavigation(props) {
 				<Link
 					to="/uni/chair"
 					style={{
+						marginTop: 8,
+						marginBottom: 8,
 						textDecoration: "none",
 						color: "white",
 						textAlign: "center",
 					}}>
-					مهندسی کامپیوتر
+					دانشکاه صنعتی امیرکبیر
 				</Link>
+				<Divider
+					style={{
+						backgroundColor: Colors.secondary,
+						margin: 4,
+					}}
+				/>
+				{createMajorList(majorList)}
 			</Drawer>
-		</React.Fragment>
+		</div>
 	);
 }

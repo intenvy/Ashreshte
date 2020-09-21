@@ -1,5 +1,6 @@
 import React from "react";
 import { Line, Bar } from "react-chartjs-2";
+import { Typography } from "@material-ui/core";
 
 export default function StackedBarChart(props) {
 	const xAxisName = "years";
@@ -12,9 +13,14 @@ export default function StackedBarChart(props) {
 	for (let i = 0; i < rawData[firstParameter].length; i++) {
 		let first = rawData[firstParameter][i];
 		let second = rawData[secondParameter][i];
-		let percent = parseInt((first / (first + second)) * 100);
-		firstSet.push(percent);
-		secondSet.push(100 - percent);
+		if (props.showPercentage) {
+			let percent = parseInt((first / (first + second)) * 100);
+			firstSet.push(percent);
+			secondSet.push(100 - percent);
+		} else {
+			firstSet.push(first);
+			secondSet.push(second);
+		}
 	}
 
 	const data = {
@@ -35,22 +41,36 @@ export default function StackedBarChart(props) {
 		],
 	};
 	return (
-		<Bar
-			options={{
-				scales: {
-					xAxes: [
-						{
-							stacked: true,
-						},
-					],
-					yAxes: [
-						{
-							stacked: true,
-						},
-					],
-				},
-			}}
-			data={data}
-		/>
+		<div style={{ textAlign: "center" }}>
+			<Typography variant="subtitle1" align="center">
+				{props.title}
+			</Typography>
+			<Bar
+				height={250}
+				options={{
+					scales: {
+						xAxes: [
+							{
+								scaleLabel: {
+									display: true,
+									labelString: props.xAxesName ? props.xAxesName : "سال کنکور",
+								},
+								stacked: true,
+							},
+						],
+						yAxes: [
+							{
+								scaleLabel: {
+									display: true,
+									labelString: props.yAxesName,
+								},
+								stacked: true,
+							},
+						],
+					},
+				}}
+				data={data}
+			/>
+		</div>
 	);
 }

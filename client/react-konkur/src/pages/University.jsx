@@ -5,6 +5,7 @@ import {
 	makeStyles,
 	Typography,
 	Grid,
+	Fade,
 } from "@material-ui/core";
 import Colors from "../utilities/Colors";
 import { Link } from "react-router-dom";
@@ -18,6 +19,7 @@ import UniversityName from "../components/UniversityName";
 import UniversityTransportation from "../components/UniversityTransportaiton";
 import UniversityMigration from "../components/UniversityMigration";
 import UniversityEnterance from "../components/UniversityEnterance";
+import UniversityHeader from "../components/UniversityHeader";
 const useStyles = makeStyles((theme) => ({
 	paper: {
 		width: 180,
@@ -35,6 +37,8 @@ export default function University(props) {
 	const transportationRef = useRef(null);
 	const enteranceRef = useRef(null);
 	const migrationRef = useRef(null);
+	const headerRef = useRef(null);
+	const [sideNavVisible, setSideNavVisible] = useState(false);
 	const [selectedArea, setSelectedArea] = useState(0);
 
 	const transportationData = {
@@ -64,12 +68,29 @@ export default function University(props) {
 		lowest25PercentRank: { years: [92, 93, 94], rankings: [54, 55, 44] },
 	};
 
+	window.addEventListener("scroll", (e) => {
+		if (e.path[1].scrollY > headerRef.current.offsetTop - 75) {
+			props.setIsHeaderTransparent(false);
+			setSideNavVisible(true);
+		} else {
+			props.setIsHeaderTransparent(true);
+			setSideNavVisible(false);
+		}
+	});
+
 	return (
 		<React.Fragment>
-			<SideNavigation />
-			<Container className={classes.container}>
-				<UniversityName />
+			<Fade in={sideNavVisible} timeout={1000}>
+				<div>
+					<SideNavigation />
+				</div>
+			</Fade>
 
+			<UniversityHeader />
+			<button
+				ref={headerRef}
+				style={{ visibility: "hidden", width: 0, height: 0 }}></button>
+			<Container className={classes.container}>
 				<Grid container justify="center">
 					<Grid container justify="center" item xs={4}>
 						<ScrollLink name="کنکور" scrollTo={enteranceRef} />
@@ -101,7 +122,10 @@ export default function University(props) {
 						ref={transportationRef}
 						style={{ visibility: "hidden", width: 0, height: 0 }}></button>
 					<Grid container justify="center">
-						<UniversityTransportation data={transportationData} />
+						<UniversityTransportation
+							data={transportationData}
+							mapTitle={"دانشگاه"}
+						/>
 					</Grid>
 				</div>
 			</Container>
