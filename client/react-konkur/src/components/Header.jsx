@@ -41,10 +41,10 @@ export default function Header(props) {
 	useEffect(() => {
 		switch (tabValue) {
 			case 0:
-				history.push("/uni");
+				history.push("/universities");
 				break;
 			case 1:
-				history.push("/major");
+				history.push("/majors");
 				break;
 			case 2:
 				history.push("/aboutus");

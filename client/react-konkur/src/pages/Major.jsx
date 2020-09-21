@@ -6,6 +6,7 @@ import {
 	Typography,
 	Grid,
 	Fade,
+	CircularProgress,
 } from "@material-ui/core";
 import Colors from "../utilities/Colors";
 import { Link, useParams } from "react-router-dom";
@@ -44,8 +45,6 @@ export default function University(props) {
 	const enteranceRef = useRef(null);
 	const migrationRef = useRef(null);
 	const headerRef = useRef(null);
-	const [sideNavVisible, setSideNavVisible] = useState(false);
-	const [selectedArea, setSelectedArea] = useState(0);
 	const [infoData, setInfoData] = useState({});
 	const [migrationData, setMigrationData] = useState({});
 	const [enteranceData, setEnteranceData] = useState({});
@@ -54,12 +53,11 @@ export default function University(props) {
 	const [loading, setLoading] = useState(true);
 
 	window.addEventListener("scroll", (e) => {
+		if (headerRef.current == null) return;
 		if (e.path[1].scrollY > headerRef.current.offsetTop - 150) {
 			props.setIsHeaderTransparent(false);
-			setSideNavVisible(true);
 		} else {
 			props.setIsHeaderTransparent(true);
-			setSideNavVisible(false);
 		}
 	});
 
@@ -79,6 +77,7 @@ export default function University(props) {
 
 	useEffect(() => {
 		fetchData(majorId);
+		props.setIsHeaderTransparent(true);
 	}, []);
 
 	const majorContent = (
@@ -122,7 +121,11 @@ export default function University(props) {
 
 	function showPageContent() {
 		if (loading) {
-			return <h1>Loading...</h1>;
+			return (
+				<Grid container justify="center">
+					<CircularProgress />
+				</Grid>
+			);
 		}
 		return majorContent;
 	}

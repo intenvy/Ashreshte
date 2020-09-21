@@ -6,6 +6,7 @@ import {
 	Typography,
 	Grid,
 	Fade,
+	CircularProgress,
 } from "@material-ui/core";
 import Colors from "../utilities/Colors";
 import { Link, useParams } from "react-router-dom";
@@ -81,6 +82,7 @@ export default function University(props) {
 	// };
 
 	window.addEventListener("scroll", (e) => {
+		if (headerRef.current == null) return;
 		if (e.path[1].scrollY > headerRef.current.offsetTop - 150) {
 			props.setIsHeaderTransparent(false);
 			setSideNavVisible(true);
@@ -172,7 +174,11 @@ export default function University(props) {
 	function showPageContent(selectedChairId, chairsData) {
 		console.log(selectedChairId);
 		if (loading) {
-			return <h1>Loading...</h1>;
+			return (
+				<Grid container justify="center">
+					<CircularProgress />
+				</Grid>
+			);
 		}
 		if (selectedChairId == -1) {
 			return universityContent;
