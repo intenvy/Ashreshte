@@ -9,6 +9,12 @@ export default function ShowIcon(props) {
 		case "search":
 			icon = <a.Search />;
 			break;
+		case "check":
+			icon = <a.CheckBox />;
+			break;
+		case "close":
+			icon = <a.Close />;
+			break;
 	}
 	//return icon;
 	if (icon == null) {

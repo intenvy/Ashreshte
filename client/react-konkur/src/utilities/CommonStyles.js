@@ -1,4 +1,4 @@
-const styles = {
+const CommonStyles = {
 	centerVertical: {
 		height: "100%",
 		display: "flex",
@@ -7,4 +7,4 @@ const styles = {
 	},
 };
 
-export default styles;
+export default CommonStyles;

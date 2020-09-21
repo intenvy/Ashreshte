@@ -16,6 +16,7 @@ import {
 import Colors from "./utilities/Colors";
 import Chair from "./pages/Chair";
 import University from "./pages/University";
+import MainPage from "./skan/components/MainPage";
 const myTheme = createMuiTheme({
 	direction: "rtl",
 	palette: {
@@ -44,7 +45,7 @@ function App() {
 							<Chair />
 						</Route>
 						<Route path="/">
-							<h1>landing Page</h1>
+							<MainPage />
 						</Route>
 					</Switch>
 				</Router>

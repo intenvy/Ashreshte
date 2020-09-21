@@ -13,6 +13,8 @@ const useStyles = makeStyles((theme) => ({
 //majors:[{ name: string, id: integer }]
 export default function SideNavigation(props) {
 	const classes = useStyles();
+
+	function createMajorList(majorsData) {}
 	return (
 		<React.Fragment>
 			<Drawer

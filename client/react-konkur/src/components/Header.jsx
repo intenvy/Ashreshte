@@ -7,6 +7,7 @@ import commonStyles from "../utilities/CommonStyles";
 import { Link, useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
 	container: {
+		zIndex: 2000,
 		position: "fixed",
 		paddingRight: 70,
 		paddingLeft: 70,

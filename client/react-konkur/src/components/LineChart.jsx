@@ -1,7 +1,7 @@
 import React from "react";
 import { Line, Pie } from "react-chartjs-2";
 
-export default function PieChart(props) {
+export default function LineChart(props) {
 	const data = {
 		labels: props.labels,
 		datasets: [
@@ -28,5 +28,11 @@ export default function PieChart(props) {
 			},
 		],
 	};
-	return <Line options={{ legend: { position: "right" } }} data={data} />;
+	return (
+		<Line
+			redraw={props.redraw}
+			options={{ legend: { position: "right" } }}
+			data={data}
+		/>
+	);
 }
