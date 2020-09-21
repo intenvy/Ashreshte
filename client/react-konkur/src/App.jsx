@@ -33,7 +33,7 @@ function App() {
 				<Router>
 					<Header transparent={isHeaderTransparent} />
 					<Switch>
-						<Route path="/uni">
+						<Route path="/uni/:id">
 							<University setIsHeaderTransparent={setIsHeaderTransparent} />
 						</Route>
 						<Route path="/major">

@@ -20,34 +20,41 @@ const useStyles = makeStyles((theme) => ({
 export default function SideNavigation(props) {
 	const classes = useStyles();
 
-	const majorList = [
-		{
-			name: "مهندسی کامپیوتر",
-		},
-		{
-			name: "مهندسی صنایع",
-		},
-		{
-			name: "مهندسی مکانیک",
-		},
-		{
-			name: "مهندسی برق",
-		},
-	];
+	function findNameByMajorId(id) {
+		switch (id) {
+			case 2:
+				return "مهندسی کامپیوتر";
+			case 3:
+				return "مهندسی مکانیک";
+		}
+	}
+
+	let majorList = [];
+	for (let i = 0; i < props.chairsData.length; i++) {
+		majorList.push({
+			name: findNameByMajorId(props.chairsData[i].info.majorId),
+			index: i,
+		});
+	}
 
 	function createMajorList(majorList) {
 		const list = majorList.map((major) => (
-			<Link
-				to="/uni/chair"
+			<Typography
+				variant="subtitle1"
+				onClick={() => {
+					props.setSelectedChairId(major.index);
+					window.scroll({ top: 0, left: 0, behavior: "smooth" });
+				}}
 				style={{
+					cursor: "pointer",
 					marginTop: 8,
 					marginBottom: 8,
-					textDecoration: "none",
+
 					color: "white",
 					textAlign: "center",
 				}}>
 				{major.name}
-			</Link>
+			</Typography>
 		));
 		return list;
 	}
@@ -57,17 +64,22 @@ export default function SideNavigation(props) {
 				classes={{ paper: classes.paper }}
 				variant="permanent"
 				anchor="left">
-				<Link
-					to="/uni/chair"
+				<Typography
+					variant="subtitle1"
+					onClick={() => {
+						props.setSelectedChairId(-1);
+						window.scroll({ top: 0, left: 0, behavior: "smooth" });
+					}}
 					style={{
+						cursor: "pointer",
 						marginTop: 8,
 						marginBottom: 8,
-						textDecoration: "none",
+
 						color: "white",
 						textAlign: "center",
 					}}>
 					دانشکاه صنعتی امیرکبیر
-				</Link>
+				</Typography>
 				<Divider
 					style={{
 						backgroundColor: Colors.secondary,

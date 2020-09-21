@@ -5,7 +5,7 @@ import { Container, Grid, Typography } from "@material-ui/core";
 import LineChart from "./LineChart";
 import AreaSelection from "./AreaSelection";
 
-export default function UniversityEntrance(props) {
+export default function Entrance(props) {
 	const data = props.data;
 
 	const [selectedArea, setSelectedArea] = useState(2);

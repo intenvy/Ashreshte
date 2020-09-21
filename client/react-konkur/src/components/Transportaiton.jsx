@@ -3,7 +3,7 @@ import { Container, Grid, Typography } from "@material-ui/core";
 import Colors from "../utilities/Colors";
 import TransportationStats from "./TransportationStats";
 
-export default function UniversityTransportation(props) {
+export default function Transportation(props) {
 	const data = props.data;
 
 	return (

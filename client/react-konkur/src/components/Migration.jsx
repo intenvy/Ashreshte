@@ -3,7 +3,7 @@ import PieChart from "./PieChart";
 import StackedBarChart from "./StackedBarChart";
 import { Container, Grid, Typography } from "@material-ui/core";
 
-export default function UniversityMigration(props) {
+export default function Migration(props) {
 	const data = props.data;
 	const totalMigration = [
 		data.inIran.reduce((a, b) => a + b, 0),

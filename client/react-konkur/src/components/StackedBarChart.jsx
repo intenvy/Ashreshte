@@ -46,6 +46,7 @@ export default function StackedBarChart(props) {
 				{props.title}
 			</Typography>
 			<Bar
+				redraw
 				height={250}
 				options={{
 					scales: {
