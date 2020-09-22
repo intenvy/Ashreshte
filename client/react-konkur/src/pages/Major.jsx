@@ -90,7 +90,7 @@ export default function University(props) {
 					<ScrollLink name="مهاجرت" scrollTo={migrationRef} />
 				</Grid>
 				<Grid container justify="center" item xs={4}>
-					<ScrollLink name="دسترسی" scrollTo={jobRef} />
+					<ScrollLink name="بازار کار" scrollTo={jobRef} />
 				</Grid>
 			</Grid>
 

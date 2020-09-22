@@ -17,7 +17,7 @@ import Colors from "./utilities/Colors";
 import Chair from "./pages/Chair";
 import University from "./pages/University";
 import Major from "./pages/Major";
-import MainPage from "./skan/components/MainPage";
+import MainPage from "./pages/MainPage";
 import MajorList from "./pages/MajorList";
 import UniversityList from "./pages/UniversityList";
 const myTheme = createMuiTheme({
@@ -59,7 +59,7 @@ function App() {
 							<Chair />
 						</Route>
 						<Route path="/">
-							<MainPage />
+							<MainPage setIsHeaderTransparent={setIsHeaderTransparent} />
 						</Route>
 					</Switch>
 				</Router>
