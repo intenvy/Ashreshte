@@ -1,50 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Grid, Typography } from "@material-ui/core";
 import Colors from "../utilities/Colors";
 import TransportationStats from "./TransportationStats";
+import ContentSeparator from "./ContentSeparator";
+import AreaSelection from "./AreaSelection";
 
 export default function Transportation(props) {
 	const data = props.data;
-
+	const [type, setType] = useState(0); //0: uni, 1: dorm
 	return (
-		<Container>
-			<Grid container justify="center" style={{ marginBottom: 64 }}>
-				<Typography variant="h6">دسترسی</Typography>
-			</Grid>
-			<Grid container spacing={5}>
-				<Grid item container xs={6} style={{ textAlign: "center" }}>
-					<div>
-						<iframe
-							style={{ width: "100%", height: 200 }}
-							src={data.departmentLocationEmbed}></iframe>
-
-						<Typography variant="caption" align="center">
-							{props.mapTitle}
-						</Typography>
+		<Container disableGutters maxWidth={false}>
+			<ContentSeparator title="وضعیت دسترسی" />
+			<Grid container>
+				<Grid item container style={{ paddingTop: 16 }}>
+					<div
+						style={{
+							width: "100%",
+							height: "100%",
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+						}}>
+						<AreaSelection
+							options={[props.mapTitle, "خوابگاه"]}
+							value={type}
+							setValue={setType}
+						/>
 					</div>
 				</Grid>
-				<Grid item container xs={6} style={{ textAlign: "center" }}>
-					{data.hasDormitory ? (
-						<div>
-							<iframe
-								style={{ width: "100%", height: 200 }}
-								src={data.dormLocationEmbed}></iframe>
-							<Typography variant="caption">خوابگاه</Typography>
-						</div>
-					) : (
-						<div
-							style={{
-								width: "100%",
-								height: 200,
-								backgroundColor: Colors.primary,
-							}}>
-							<Typography style={{ color: "white" }}>خوابگاه ندارد</Typography>
-						</div>
-					)}
+				<Grid item container justify="center">
+					<div>
+						<iframe
+							style={{ width: "100%", height: 250 }}
+							src={
+								type == 0
+									? data.departmentLocationEmbed
+									: data.dormLocationEmbed
+							}></iframe>
+					</div>
 				</Grid>
-			</Grid>
-			<Grid container justify="center">
-				<TransportationStats data={data} />
+				<Grid container justify="center" style={{ paddingBottom: 64 }}>
+					<TransportationStats data={data} />
+				</Grid>
 			</Grid>
 		</Container>
 	);

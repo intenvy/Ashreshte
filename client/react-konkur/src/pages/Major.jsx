@@ -25,6 +25,7 @@ import getUniversityById from "../services/getUniversityById";
 import Chair from "./Chair";
 import getMajorById from "../services/getMajorById";
 import Job from "../components/Job";
+import Description from "../components/Description";
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -33,8 +34,8 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: Colors.sideNavigationBackground,
 	},
 	container: {
-		paddingRight: 16,
-		paddingTop: 32,
+		backgroundColor: "#f1f1f1",
+		paddingTop: 64,
 	},
 }));
 
@@ -53,8 +54,9 @@ export default function University(props) {
 	const [loading, setLoading] = useState(true);
 
 	window.addEventListener("scroll", (e) => {
+		var path = e.path || (e.composedPath && e.composedPath());
 		if (headerRef.current == null) return;
-		if (e.path[1].scrollY > headerRef.current.offsetTop - 150) {
+		if (path[1].scrollY > headerRef.current.offsetTop - 150) {
 			props.setIsHeaderTransparent(false);
 		} else {
 			props.setIsHeaderTransparent(true);
@@ -81,41 +83,19 @@ export default function University(props) {
 	}, []);
 
 	const majorContent = (
-		<Container className={classes.container}>
+		<Container className={classes.container} disableGutters maxWidth={false}>
+			<Description text={infoData.description} />
 			<Grid container justify="center">
-				<Grid container justify="center" item xs={4}>
-					<ScrollLink name="کنکور" scrollTo={enteranceRef} />
-				</Grid>
-				<Grid container justify="center" item xs={4}>
-					<ScrollLink name="مهاجرت" scrollTo={migrationRef} />
-				</Grid>
-				<Grid container justify="center" item xs={4}>
-					<ScrollLink name="بازار کار" scrollTo={jobRef} />
-				</Grid>
+				<Enterance data={enteranceData} />
 			</Grid>
 
-			<div style={{ width: "100%", height: "50%" }}>
-				<button
-					ref={enteranceRef}
-					style={{ visibility: "hidden", width: 0, height: 0 }}></button>
-				<Grid container justify="center">
-					<Enterance data={enteranceData} />
-				</Grid>
+			<Grid container justify="center">
+				<Migration data={migrationData} />
+			</Grid>
 
-				<button
-					ref={migrationRef}
-					style={{ visibility: "hidden", width: 0, height: 0 }}></button>
-				<Grid container justify="center">
-					<Migration data={migrationData} />
-				</Grid>
-
-				<button
-					ref={jobRef}
-					style={{ visibility: "hidden", width: 0, height: 0 }}></button>
-				<Grid container justify="center">
-					<Job data={jobData} />
-				</Grid>
-			</div>
+			<Grid container justify="center">
+				<Job data={jobData} />
+			</Grid>
 		</Container>
 	);
 

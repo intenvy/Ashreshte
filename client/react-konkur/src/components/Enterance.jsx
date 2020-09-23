@@ -4,6 +4,7 @@ import StackedBarChart from "./StackedBarChart";
 import { Container, Grid, Typography } from "@material-ui/core";
 import LineChart from "./LineChart";
 import AreaSelection from "./AreaSelection";
+import ContentSeparator from "./ContentSeparator";
 
 export default function Entrance(props) {
 	const data = props.data;
@@ -39,23 +40,14 @@ export default function Entrance(props) {
 	}, [selectedArea]);
 
 	return (
-		<Container>
-			<Grid container justify="center" style={{ marginBottom: 64 }}>
-				<Typography variant="h6">کنکور</Typography>
-			</Grid>
-			<Grid container spacing={5}>
-				<Grid item container xs={6}>
-					{selectedData != null && (
-						<LineChart
-							redraw
-							data={selectedData.rankings}
-							labels={selectedData.years}
-						/>
-					)}
-				</Grid>
-				<Grid item container xs={6} style={{ paddingTop: 16 }}>
+		<Container disableGutters maxWidth={false}>
+			<ContentSeparator title="وضعیت رتبه‌های کنکور" />
+
+			<Grid container>
+				<Grid item container style={{ paddingTop: 16 }}>
 					<div
 						style={{
+							width: "100%",
 							height: "100%",
 							display: "flex",
 							flexDirection: "column",
@@ -66,6 +58,17 @@ export default function Entrance(props) {
 							value={selectedArea}
 							setValue={setSelectedArea}
 						/>
+					</div>
+				</Grid>
+				<Grid item container justify="center">
+					<div style={{ width: "60%" }}>
+						{selectedData != null && (
+							<LineChart
+								redraw
+								data={selectedData.rankings}
+								labels={selectedData.years}
+							/>
+						)}
 					</div>
 				</Grid>
 			</Grid>

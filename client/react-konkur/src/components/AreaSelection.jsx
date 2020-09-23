@@ -11,9 +11,13 @@ export default function AreaSelection(props) {
 			array.push(
 				<Chip
 					style={{ margin: 4 }}
-					color="secondary"
+					color="primary"
 					label={
-						<Typography style={{ color: selected ? "white" : null }}>
+						<Typography
+							style={{
+								color: selected ? "white" : null,
+								fontFamily: "myFirstFont",
+							}}>
 							{options[i]}
 						</Typography>
 					}
@@ -25,13 +29,15 @@ export default function AreaSelection(props) {
 			);
 		}
 		return (
-			<div>
-				<div style={{ display: "flex", justifyContent: "center" }}>
-					{[array[0], array[1], array[2]]}
-				</div>
-				<div style={{ display: "flex", justifyContent: "center" }}>
-					{[array[3], array[4], array[5]]}
-				</div>
+			<div
+				style={{
+					display: "flex",
+					justifyContent: "center",
+					width: "100%",
+					paddingTop: 16,
+					paddingBottom: 16,
+				}}>
+				<div style={{ display: "flex", justifyContent: "center" }}>{array}</div>
 			</div>
 		);
 	}

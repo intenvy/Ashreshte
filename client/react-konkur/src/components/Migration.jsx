@@ -1,37 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import PieChart from "./PieChart";
 import StackedBarChart from "./StackedBarChart";
 import { Container, Grid, Typography } from "@material-ui/core";
+import ContentSeparator from "./ContentSeparator";
+import AreaSelection from "./AreaSelection";
 
 export default function Migration(props) {
 	const data = props.data;
+	const [type, setType] = useState(0); //0: number , 1: percent
+	console.log(type);
 	const totalMigration = [
 		data.inIran.reduce((a, b) => a + b, 0),
 		data.notInIran.reduce((a, b) => a + b),
 		0,
 	];
 	return (
-		<Container>
-			<Grid container justify="center" style={{ marginBottom: 64 }}>
-				<Typography variant="h6">مهاجرت / اپلای</Typography>
-			</Grid>
-			<Grid container spacing={5}>
-				<Grid item container xs={6}>
-					<StackedBarChart
-						data={data}
-						title="میزان اپلای"
-						xAxesName="سال کنکور"
-						yAxesName="تعداد افراد"
-					/>
+		<Container disableGutters maxWidth={false}>
+			<ContentSeparator title="وضعیت مهاجرت" />
+			<Grid container>
+				<Grid item container style={{ paddingTop: 16 }}>
+					<div
+						style={{
+							width: "100%",
+							height: "100%",
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+						}}>
+						<AreaSelection
+							options={["میزان اپلای", "درصد اپلای"]}
+							value={type}
+							setValue={setType}
+						/>
+					</div>
 				</Grid>
-				<Grid item container xs={6}>
-					<StackedBarChart
-						data={data}
-						showPercentage
-						title="درصد اپلای"
-						xAxesName="سال کنکور"
-						yAxesName="درصد افراد"
-					/>
+				<Grid item container justify="center">
+					<div style={{ width: "60%" }}>
+						<StackedBarChart
+							data={data}
+							showPercentage={type == 1 ? true : false}
+							title={type == 1 ? "میزان اپلای" : "درصد اپلای"}
+							xAxesName="سال کنکور"
+							yAxesName={type == 1 ? "میزان افراد" : "درصد افراد"}
+						/>
+					</div>
 				</Grid>
 			</Grid>
 		</Container>

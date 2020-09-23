@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	Container,
 	Drawer,
 	makeStyles,
 	Typography,
 	Divider,
+	Dialog,
 } from "@material-ui/core";
 import Colors from "../utilities/Colors";
 import { Link } from "react-router-dom";
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 //majors:[{ name: string, id: integer }]
 export default function SideNavigation(props) {
 	const classes = useStyles();
-
+	const [dialogOpen, setDialogOpen] = useState(false);
 	function findNameByMajorId(id) {
 		switch (id) {
 			case 2:
@@ -43,6 +44,7 @@ export default function SideNavigation(props) {
 				variant="subtitle1"
 				onClick={() => {
 					props.setSelectedChairId(major.index);
+					setDialogOpen(false);
 					window.scroll({ top: 0, left: 0, behavior: "smooth" });
 				}}
 				style={{
@@ -50,7 +52,6 @@ export default function SideNavigation(props) {
 					marginTop: 8,
 					marginBottom: 8,
 
-					color: "white",
 					textAlign: "center",
 				}}>
 				{major.name}
@@ -59,35 +60,35 @@ export default function SideNavigation(props) {
 		return list;
 	}
 	return (
-		<div>
-			<Drawer
-				classes={{ paper: classes.paper }}
-				variant="permanent"
-				anchor="left">
-				<Typography
-					variant="subtitle1"
-					onClick={() => {
-						props.setSelectedChairId(-1);
-						window.scroll({ top: 0, left: 0, behavior: "smooth" });
-					}}
-					style={{
-						cursor: "pointer",
-						marginTop: 8,
-						marginBottom: 8,
+		<div style={{ position: "fixed", left: 16, bottom: 16 }}>
+			<div
+				style={{
+					display: "flex",
+					justifyContent: "center",
+					backgroundColor: Colors.primary,
+				}}
+				onClick={() => {
+					setDialogOpen(true);
+				}}>
+				{props.selectedChairId == -1 ? (
+					"اسم دانشگاه"
+				) : (
+					<Typography>
+						{findNameByMajorId(
+							props.chairsData[props.selectedChairId].info.majorId
+						)}
+					</Typography>
+				)}
+			</div>
 
-						color: "white",
-						textAlign: "center",
-					}}>
-					دانشکاه صنعتی امیرکبیر
-				</Typography>
-				<Divider
-					style={{
-						backgroundColor: Colors.secondary,
-						margin: 4,
-					}}
-				/>
+			<Dialog
+				open={dialogOpen}
+				onClose={() => {
+					setDialogOpen(false);
+				}}
+				PaperProps={{ style: { padding: 32 } }}>
 				{createMajorList(majorList)}
-			</Drawer>
+			</Dialog>
 		</div>
 	);
 }

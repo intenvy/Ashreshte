@@ -20,6 +20,7 @@ import Transportation from "../components/Transportaiton";
 import Migration from "../components/Migration";
 import Enterance from "../components/Enterance";
 import ProfileHeader from "../components/ProfileHeader";
+import Description from "../components/Description";
 const useStyles = makeStyles((theme) => ({
 	paper: {
 		width: 180,
@@ -27,8 +28,8 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: Colors.sideNavigationBackground,
 	},
 	container: {
-		paddingRight: 180 + 16,
-		paddingTop: 76 + 16,
+		backgroundColor: "#f1f1f1",
+		paddingTop: 64,
 	},
 }));
 
@@ -59,41 +60,20 @@ export default function Chair(props) {
 			<button
 				ref={headerRef}
 				style={{ visibility: "hidden", width: 0, height: 0 }}></button>
-			<Container className={classes.container}>
+			<Container className={classes.container} disableGutters maxWidth={false}>
+				<Description text={infoData.description} />
+
 				<Grid container justify="center">
-					<Grid container justify="center" item xs={4}>
-						<ScrollLink name="کنکور" scrollTo={enteranceRef} />
-					</Grid>
-					<Grid container justify="center" item xs={4}>
-						<ScrollLink name="مهاجرت" scrollTo={migrationRef} />
-					</Grid>
-					<Grid container justify="center" item xs={4}>
-						<ScrollLink name="دسترسی" scrollTo={transportationRef} />
-					</Grid>
+					<Enterance data={enteranceData} />
 				</Grid>
 
-				<div style={{ width: "100%", height: "50%" }}>
-					<button
-						ref={enteranceRef}
-						style={{ visibility: "hidden", width: 0, height: 0 }}></button>
-					<Grid container justify="center">
-						<Enterance data={enteranceData} />
-					</Grid>
+				<Grid container justify="center">
+					<Migration data={migrationData} />
+				</Grid>
 
-					<button
-						ref={migrationRef}
-						style={{ visibility: "hidden", width: 0, height: 0 }}></button>
-					<Grid container justify="center">
-						<Migration data={migrationData} />
-					</Grid>
-
-					<button
-						ref={transportationRef}
-						style={{ visibility: "hidden", width: 0, height: 0 }}></button>
-					<Grid container justify="center">
-						<Transportation data={transportationData} mapTitle={"دانشکده"} />
-					</Grid>
-				</div>
+				<Grid container justify="center">
+					<Transportation data={transportationData} mapTitle={"دانشکده"} />
+				</Grid>
 			</Container>
 		</React.Fragment>
 	);

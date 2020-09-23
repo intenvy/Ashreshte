@@ -5,6 +5,7 @@ import { makeStyles, Tabs, Tab, Typography } from "@material-ui/core";
 import Searchbar from "./Searchbar";
 import commonStyles from "../utilities/CommonStyles";
 import { Link, useHistory } from "react-router-dom";
+import logo from "../images/logo.jpg";
 const useStyles = makeStyles((theme) => ({
 	container: {
 		zIndex: 1200,
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 		width: "100%",
 	},
 	image: {
-		width: 100,
+		width: 70,
 		height: 68,
 	},
 	tabContainer: {
@@ -73,7 +74,7 @@ export default function Header(props) {
 						<img
 							onClick={() => history.push("/")}
 							className={classes.image}
-							src="https://img.techpowerup.org/200919/download-superman-logo-png-hd179.png"></img>
+							src={logo}></img>
 
 						<Tabs
 							className={classes.tabs}

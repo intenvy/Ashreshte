@@ -1,24 +1,25 @@
 import React from "react";
 import { Avatar, Typography } from "@material-ui/core";
+import EclipseTitle from "./EclipseTitle";
+import SeperatorLine from "./SeperatorLine";
+import Colors from "../utilities/Colors";
+import SUTImage from "../images/SUT.jpg";
 
 export default function ProfileHeader(props) {
 	const data = props.data;
 	return (
-		<div style={{ position: "relative", paddingBottom: 75 }}>
-			<img
-				style={{ width: "100%", boxShadow: "0px 3px 5px 0px black" }}
-				src="https://picsum.photos/seed/picsum/160/40"
-			/>
+		<div style={{ position: "relative" }}>
+			<img style={{ width: "100%" }} src={SUTImage} />
 
 			<div
 				style={{
 					position: "absolute",
-					bottom: 32,
+					bottom: -45,
 					left: 32,
-					backgroundColor: "white",
+					backgroundColor: Colors.primary,
 					borderRadius: "50%",
-					padding: 4,
-					boxShadow: "0px 3px 20px 0px black",
+					padding: 8,
+					zIndex: 1,
 				}}>
 				<Avatar
 					style={{
@@ -28,18 +29,28 @@ export default function ProfileHeader(props) {
 					src="https://picsum.photos/seed/picsum/140/70"
 				/>
 			</div>
+
 			<div
 				style={{
 					position: "absolute",
-					bottom: 100,
-					right: 8,
+					bottom: 4,
+					right: 0,
+					width: "100%",
 				}}>
-				<Typography variant="h6" style={{ color: "white" }}>
-					{data.faName}
-				</Typography>
-				<Typography variant="h6" style={{ color: "white" }}>
-					{data.englishName}
-				</Typography>
+				<SeperatorLine />
+			</div>
+			<div
+				style={{
+					position: "absolute",
+					bottom: -15,
+					right: 48,
+					width: "calc(100%-48px)",
+				}}>
+				<EclipseTitle
+					title={data.faName + " - " + data.englishName}
+					height={45}
+					variant="body1"
+				/>
 			</div>
 		</div>
 	);

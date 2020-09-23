@@ -31,7 +31,7 @@ export default function LineChart(props) {
 	return (
 		<Line
 			redraw={props.redraw}
-			options={{ legend: { position: "right" } }}
+			//options={{ legend: { position: "right" } }}
 			data={data}
 		/>
 	);
