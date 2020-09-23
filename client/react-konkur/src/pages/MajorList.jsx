@@ -71,16 +71,17 @@ export default function MajorList(props) {
 
 	return (
 		<Container className={classes.container} disableGutters maxWidth={false}>
-			<Typography
-				variant="h4"
-				style={{
-					marginRight: 16,
+			<Grid container justify="center">
+				<Typography
+					variant="h4"
+					style={{
+						color: Colors.primary,
+						fontFamily: "myFirstFont",
+					}}>
+					رشته ها
+				</Typography>
+			</Grid>
 
-					color: Colors.primary,
-					fontFamily: "myFirstFont",
-				}}>
-				رشته ها
-			</Typography>
 			<Divider
 				style={{
 					backgroundColor: Colors.primary,
@@ -89,7 +90,9 @@ export default function MajorList(props) {
 					margin: 8,
 				}}
 			/>
-			<div>{createContent()}</div>
+			<Grid container justify="center" wrap="wrap">
+				{createContent()}
+			</Grid>
 		</Container>
 	);
 }

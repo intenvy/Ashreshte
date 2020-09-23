@@ -31,7 +31,26 @@ export default function LineChart(props) {
 	return (
 		<Line
 			redraw={props.redraw}
-			//options={{ legend: { position: "right" } }}
+			options={{
+				scales: {
+					xAxes: [
+						{
+							scaleLabel: {
+								display: true,
+								labelString: props.xAxesName ? props.xAxesName : "سال",
+							},
+						},
+					],
+					yAxes: [
+						{
+							scaleLabel: {
+								display: true,
+								labelString: props.xAxesName ? props.xAxesName : "رتبه",
+							},
+						},
+					],
+				},
+			}}
 			data={data}
 		/>
 	);

@@ -11,6 +11,8 @@ export default function Entrance(props) {
 
 	const [selectedArea, setSelectedArea] = useState(2);
 	const [selectedData, setSelectedData] = useState(null);
+	const dimensions = JSON.parse(localStorage.getItem("dimensions"));
+	const mobile = dimensions.width > 700 ? false : true;
 
 	useEffect(() => {
 		let name;
@@ -40,8 +42,8 @@ export default function Entrance(props) {
 	}, [selectedArea]);
 
 	return (
-		<Container disableGutters maxWidth={false}>
-			<ContentSeparator title="وضعیت رتبه‌های کنکور" />
+		<Container disableGutters maxWidth={dimensions.width > 700 ? false : "xs"}>
+			<ContentSeparator title="وضعیت کنکور" />
 
 			<Grid container>
 				<Grid item container style={{ paddingTop: 16 }}>
@@ -61,7 +63,7 @@ export default function Entrance(props) {
 					</div>
 				</Grid>
 				<Grid item container justify="center">
-					<div style={{ width: "60%" }}>
+					<div style={{ width: mobile ? "90%" : "60%" }}>
 						{selectedData != null && (
 							<LineChart
 								redraw

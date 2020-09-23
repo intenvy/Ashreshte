@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
 export default function SideNavigation(props) {
 	const classes = useStyles();
 	const [dialogOpen, setDialogOpen] = useState(false);
+	const dimensions = JSON.parse(localStorage.getItem("dimensions"));
+	const mobile = dimensions.width > 700 ? false : true;
+
 	function findNameByMajorId(id) {
 		switch (id) {
 			case 2:
@@ -65,8 +68,9 @@ export default function SideNavigation(props) {
 			<div
 				style={{
 					position: "fixed",
-					left: 16,
-					bottom: 16,
+					width: mobile ? "100%" : "max-content",
+					left: mobile ? "unset" : 16,
+					bottom: mobile ? 0 : 16,
 					zIndex: 1200,
 				}}>
 				<div
@@ -83,7 +87,7 @@ export default function SideNavigation(props) {
 					}}>
 					{props.selectedChairId == -1 ? (
 						<Typography
-							variant="body1"
+							variant={mobile ? "caption" : "body1"}
 							style={{ fontFamily: "myFirstFont", color: "white" }}>
 							{props.universityName}
 						</Typography>

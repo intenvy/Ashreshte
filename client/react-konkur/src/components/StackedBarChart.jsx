@@ -27,13 +27,13 @@ export default function StackedBarChart(props) {
 		labels: rawData[xAxisName],
 		datasets: [
 			{
-				barPercentage: 0.2,
+				barPercentage: 0.1,
 				label: "ایران",
 				data: firstSet,
 				backgroundColor: "#01a2f9",
 			},
 			{
-				barPercentage: 0.2,
+				barPercentage: 0.1,
 				label: "خارج",
 				data: secondSet,
 				backgroundColor: "#42bad0",
@@ -44,7 +44,7 @@ export default function StackedBarChart(props) {
 		<div style={{ textAlign: "center" }}>
 			<Bar
 				redraw
-				height={250}
+				//height={160}
 				options={{
 					scales: {
 						xAxes: [

@@ -37,7 +37,14 @@ export default function AreaSelection(props) {
 					paddingTop: 16,
 					paddingBottom: 16,
 				}}>
-				<div style={{ display: "flex", justifyContent: "center" }}>{array}</div>
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						flexWrap: "wrap",
+					}}>
+					{array}
+				</div>
 			</div>
 		);
 	}

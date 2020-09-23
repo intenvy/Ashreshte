@@ -43,6 +43,7 @@ export default function Searchbar(props) {
 					//style={{ width: 100 }}
 					placeholder="دانشگاه رشته..."
 					disableUnderline
+					style={{ fontFamily: "myFirstFont" }}
 					classes={{
 						input: classes.inputInput,
 					}}

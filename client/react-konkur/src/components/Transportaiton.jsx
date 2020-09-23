@@ -8,8 +8,9 @@ import AreaSelection from "./AreaSelection";
 export default function Transportation(props) {
 	const data = props.data;
 	const [type, setType] = useState(0); //0: uni, 1: dorm
+	const dimensions = JSON.parse(localStorage.getItem("dimensions"));
 	return (
-		<Container disableGutters maxWidth={false}>
+		<Container disableGutters maxWidth={dimensions.width > 700 ? false : "xs"}>
 			<ContentSeparator title="وضعیت دسترسی" />
 			<Grid container>
 				<Grid item container style={{ paddingTop: 16 }}>

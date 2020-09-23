@@ -53,6 +53,8 @@ export default function University(props) {
 
 	const [loading, setLoading] = useState(true);
 
+	const dimensions = JSON.parse(localStorage.getItem("dimensions"));
+
 	window.addEventListener("scroll", (e) => {
 		var path = e.path || (e.composedPath && e.composedPath());
 		if (headerRef.current == null) return;
@@ -83,7 +85,10 @@ export default function University(props) {
 	}, []);
 
 	const majorContent = (
-		<Container className={classes.container} disableGutters maxWidth={false}>
+		<Container
+			className={classes.container}
+			disableGutters
+			maxWidth={dimensions.width > 700 ? false : "xs"}>
 			<Description text={infoData.description} />
 			<Grid container justify="center">
 				<Enterance data={enteranceData} />

@@ -20,6 +20,10 @@ import Major from "./pages/Major";
 import MainPage from "./pages/MainPage";
 import MajorList from "./pages/MajorList";
 import UniversityList from "./pages/UniversityList";
+import Footer from "./skan/components/Footer";
+import useWindowDimensions from "./functions/useWindowDimensions";
+import GeneralHeader from "./components/GeneralHeader";
+import LandingPage from "./pages/LandingPage";
 const myTheme = createMuiTheme({
 	direction: "rtl",
 	palette: {
@@ -30,11 +34,29 @@ const myTheme = createMuiTheme({
 function App() {
 	const [isHeaderTransparent, setIsHeaderTransparent] = useState(true);
 
+	if (localStorage.getItem("dimensions") == null) {
+		localStorage.setItem(
+			"dimensions",
+			JSON.stringify({
+				width: 0,
+				height: 0,
+			})
+		);
+	}
+	localStorage.setItem(
+		"dimensions",
+		JSON.stringify({
+			width: useWindowDimensions().width,
+			height: useWindowDimensions().height,
+		})
+	);
+
 	return (
 		<React.Fragment>
 			<ThemeProvider theme={myTheme}>
 				<Router>
-					<Header transparent={isHeaderTransparent} />
+					<GeneralHeader transparent={isHeaderTransparent} />
+
 					<Switch>
 						<Route path="/uni/:id">
 							<University setIsHeaderTransparent={setIsHeaderTransparent} />
@@ -59,9 +81,10 @@ function App() {
 							<Chair />
 						</Route>
 						<Route path="/">
-							<MainPage setIsHeaderTransparent={setIsHeaderTransparent} />
+							<LandingPage setIsHeaderTransparent={setIsHeaderTransparent} />
 						</Route>
 					</Switch>
+					<Footer />
 				</Router>
 			</ThemeProvider>
 		</React.Fragment>

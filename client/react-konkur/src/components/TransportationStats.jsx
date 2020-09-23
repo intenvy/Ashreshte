@@ -5,12 +5,14 @@ import ShowIcon from "./ShowIcon";
 import checkImage from "../images/check.png";
 import uncheckImage from "../images/uncheck.png";
 import busImage from "../images/bus.png";
+import BRTImage from "../images/brt.png";
 import bedImage from "../images/bed.png";
 import metroImage from "../images/metro.png";
 import distanceImage from "../images/distance.png";
 
 export default function TransportationStats(props) {
 	const data = props.data;
+	const dimensions = JSON.parse(localStorage.getItem("dimensions"));
 	function Stat(props) {
 		return (
 			<div
@@ -62,19 +64,21 @@ export default function TransportationStats(props) {
 				margin: 32,
 				display: "flex",
 				justifyContent: "center",
+				flexWrap: "wrap",
 				width: "70%",
 			}}>
-			<div
-				style={{ display: "flex", justifyContent: "center", height: "100%" }}>
+			<div style={{ display: "flex", justifyContent: "center" }}>
 				<Stat imageSrc={metroImage} name="مترو" value={data.hasMetro} />
-				<Stat imageSrc={busImage} name="BRT" value={data.hasBRT} />
+				<Stat imageSrc={BRTImage} name="BRT" value={data.hasBRT} />
 				<Stat imageSrc={busImage} name="اتوبوس" value={data.hasBus} />
 			</div>
-			<div style={{ marginTop: 4, marginBottom: 4 }}>
-				<Divider orientation="vertical" />
-			</div>
-			<div
-				style={{ display: "flex", justifyContent: "center", height: "100%" }}>
+			{dimensions.width > 700 && (
+				<div style={{ marginTop: 4, marginBottom: 4 }}>
+					<Divider orientation="vertical" />
+				</div>
+			)}
+
+			<div style={{ display: "flex", justifyContent: "center" }}>
 				<Stat imageSrc={bedImage} name="خوابگاه" value={data.hasDormitory} />
 				{data.hasDormitory && (
 					<Stat

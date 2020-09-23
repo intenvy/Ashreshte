@@ -14,8 +14,11 @@ export default function Migration(props) {
 		data.notInIran.reduce((a, b) => a + b),
 		0,
 	];
+	const dimensions = JSON.parse(localStorage.getItem("dimensions"));
+	const mobile = dimensions.width > 700 ? false : true;
+
 	return (
-		<Container disableGutters maxWidth={false}>
+		<Container disableGutters maxWidth={dimensions.width > 700 ? false : "xs"}>
 			<ContentSeparator title="وضعیت مهاجرت" />
 			<Grid container>
 				<Grid item container style={{ paddingTop: 16 }}>
@@ -35,7 +38,7 @@ export default function Migration(props) {
 					</div>
 				</Grid>
 				<Grid item container justify="center">
-					<div style={{ width: "60%" }}>
+					<div style={{ width: mobile ? "90%" : "60%" }}>
 						<StackedBarChart
 							data={data}
 							showPercentage={type == 1 ? true : false}

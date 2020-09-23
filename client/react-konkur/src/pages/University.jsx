@@ -57,6 +57,8 @@ export default function University(props) {
 	const [selectedChairId, setSelectedChairId] = useState(-1); //-1 means we are on university page
 	// SELECTED CHAIR ID IS NOT ACTUALLY ID, IT'S INDEX!
 
+	const dimensions = JSON.parse(localStorage.getItem("dimensions"));
+
 	window.addEventListener("scroll", (e) => {
 		//console.log(transportationRef.current);
 		var path = e.path || (e.composedPath && e.composedPath());
@@ -105,17 +107,18 @@ export default function University(props) {
 	}, [selectedChairId]);
 
 	const universityContent = (
-		<Container className={classes.container} disableGutters maxWidth={false}>
+		<Container
+			style={{ minHeight: window.innerHeight }}
+			className={classes.container}
+			disableGutters
+			maxWidth={dimensions.width > 700 ? false : "xs"}>
 			<Description text={infoData.description} />
-
 			<Grid container justify="center">
 				<Enterance data={enteranceData} />
 			</Grid>
-
 			<Grid container justify="center">
 				<Migration data={migrationData} />
 			</Grid>
-
 			<Grid container justify="center">
 				<Transportation data={transportationData} mapTitle={"دانشگاه"} />
 			</Grid>
@@ -150,22 +153,27 @@ export default function University(props) {
 	}
 
 	return (
-		<React.Fragment>
-			{!loading && chairsData.length > 0 && (
-				<SideNavigation
-					universityName={infoData.faName}
-					selectedChairId={selectedChairId}
-					setSelectedChairId={setSelectedChairId}
-					chairsData={chairsData}
-				/>
+		<div>
+			{!loading && chairsData.length > 0 ? (
+				<React.Fragment>
+					<SideNavigation
+						universityName={infoData.faName}
+						selectedChairId={selectedChairId}
+						setSelectedChairId={setSelectedChairId}
+						chairsData={chairsData}
+					/>
+					<ProfileHeader data={infoData} />
+
+					<button
+						ref={headerRef}
+						style={{ visibility: "hidden", width: 0, height: 0 }}></button>
+					{showPageContent(selectedChairId, chairsData)}
+				</React.Fragment>
+			) : (
+				<Grid container justify="center" style={{ marginTop: 76 + 64 }}>
+					<CircularProgress />
+				</Grid>
 			)}
-
-			<ProfileHeader data={infoData} />
-
-			<button
-				ref={headerRef}
-				style={{ visibility: "hidden", width: 0, height: 0 }}></button>
-			{showPageContent(selectedChairId, chairsData)}
-		</React.Fragment>
+		</div>
 	);
 }
