@@ -1,6 +1,6 @@
 const Colors = {
-	primary: "#363131",
-	secondary: "#4DA4BF",
+	primary: "#051561",
+	secondary: "#ffffff",
 	sideNavigationBackground: "#464444",
 };
 
