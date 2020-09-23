@@ -153,6 +153,7 @@ export default function University(props) {
 		<React.Fragment>
 			{!loading && chairsData.length > 0 && (
 				<SideNavigation
+					universityName={infoData.faName}
 					selectedChairId={selectedChairId}
 					setSelectedChairId={setSelectedChairId}
 					chairsData={chairsData}

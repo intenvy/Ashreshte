@@ -7,6 +7,7 @@ import {
 	Grid,
 	Fade,
 	CircularProgress,
+	Divider,
 } from "@material-ui/core";
 import ListItem from "../components/ListItem";
 import Colors from "../utilities/Colors";
@@ -20,8 +21,10 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: Colors.sideNavigationBackground,
 	},
 	container: {
+		minHeight: window.innerHeight,
+		backgroundColor: Colors.background,
 		paddingRight: 16,
-		paddingTop: 76 + 16,
+		paddingTop: 76 + 32,
 	},
 }));
 export default function MajorList(props) {
@@ -67,7 +70,25 @@ export default function MajorList(props) {
 	}
 
 	return (
-		<Container className={classes.container}>
+		<Container className={classes.container} disableGutters maxWidth={false}>
+			<Typography
+				variant="h4"
+				style={{
+					marginRight: 16,
+
+					color: Colors.primary,
+					fontFamily: "myFirstFont",
+				}}>
+				رشته ها
+			</Typography>
+			<Divider
+				style={{
+					backgroundColor: Colors.primary,
+					height: 2,
+					width: "calc(100%-16)",
+					margin: 8,
+				}}
+			/>
 			<div>{createContent()}</div>
 		</Container>
 	);

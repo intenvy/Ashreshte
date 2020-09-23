@@ -6,6 +6,7 @@ import {
 	Typography,
 	Divider,
 	Dialog,
+	Tooltip,
 } from "@material-ui/core";
 import Colors from "../utilities/Colors";
 import { Link } from "react-router-dom";
@@ -51,7 +52,7 @@ export default function SideNavigation(props) {
 					cursor: "pointer",
 					marginTop: 8,
 					marginBottom: 8,
-
+					fontFamily: "myFirstFont",
 					textAlign: "center",
 				}}>
 				{major.name}
@@ -60,35 +61,69 @@ export default function SideNavigation(props) {
 		return list;
 	}
 	return (
-		<div style={{ position: "fixed", left: 16, bottom: 16 }}>
+		<Tooltip title="انتخاب دانشکده" arrow>
 			<div
 				style={{
-					display: "flex",
-					justifyContent: "center",
-					backgroundColor: Colors.primary,
-				}}
-				onClick={() => {
-					setDialogOpen(true);
+					position: "fixed",
+					left: 16,
+					bottom: 16,
+					zIndex: 1200,
 				}}>
-				{props.selectedChairId == -1 ? (
-					"اسم دانشگاه"
-				) : (
-					<Typography>
-						{findNameByMajorId(
-							props.chairsData[props.selectedChairId].info.majorId
-						)}
-					</Typography>
-				)}
-			</div>
+				<div
+					style={{
+						cursor: "pointer",
+						padding: 16,
+						display: "flex",
+						justifyContent: "center",
+						backgroundColor: Colors.primary,
+						borderRadius: 15,
+					}}
+					onClick={() => {
+						setDialogOpen(true);
+					}}>
+					{props.selectedChairId == -1 ? (
+						<Typography
+							variant="body1"
+							style={{ fontFamily: "myFirstFont", color: "white" }}>
+							{props.universityName}
+						</Typography>
+					) : (
+						<Typography
+							variant="body1"
+							style={{ fontFamily: "myFirstFont", color: "white" }}>
+							{findNameByMajorId(
+								props.chairsData[props.selectedChairId].info.majorId
+							)}
+						</Typography>
+					)}
+				</div>
 
-			<Dialog
-				open={dialogOpen}
-				onClose={() => {
-					setDialogOpen(false);
-				}}
-				PaperProps={{ style: { padding: 32 } }}>
-				{createMajorList(majorList)}
-			</Dialog>
-		</div>
+				<Dialog
+					open={dialogOpen}
+					onClose={() => {
+						setDialogOpen(false);
+					}}
+					PaperProps={{ style: { padding: 32 } }}>
+					<Typography
+						variant="body1"
+						onClick={() => {
+							props.setSelectedChairId(-1);
+							setDialogOpen(false);
+							window.scroll({ top: 0, left: 0, behavior: "smooth" });
+						}}
+						style={{
+							cursor: "pointer",
+							marginTop: 8,
+							marginBottom: 8,
+							fontFamily: "myFirstFont",
+							textAlign: "center",
+						}}>
+						صفحه‌ی دانشگاه
+					</Typography>
+					<Divider style={{ marginTop: 8, marginBottom: 8 }} />
+					{createMajorList(majorList)}
+				</Dialog>
+			</div>
+		</Tooltip>
 	);
 }
