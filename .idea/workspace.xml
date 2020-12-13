@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bafc970a-eaac-4642-b7cc-0306ca2181e4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/data/dataset.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/data/linkedin.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/cli/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/cli/crawler_cli.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/crawler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/fetcher/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/fetcher/fetcher.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/pipe/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/pipe/logger_pipe.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/pipe/parser_pipe.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/submitter/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/submitter/engine.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/submitter/query.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/submitter/submitter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/jobvision/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/jobvision/jv_crawler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/jobvision/jv_fetchers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/jobvision/jv_models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/jobvision/jv_parsers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/kanoon/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/kanoon/kanoon_crawler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/kanoon/kanoon_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/kanoon/kanoon_fetchers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/kanoon/kanoon_models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/kanoon/kanoon_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/linkedin/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/linkedin/linkedin_fetcher.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/core/crawler/concretes/linkedin/linkedin_models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/exceptions/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/exceptions/fetching.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/utils/http/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/utils/http/connections.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/utils/string/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/utils/string/stringify.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/utils/structures/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/utils/structures/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/utils/structures/stack.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1hYVsu70fXc0z21jbk2VpgydmbZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\python\Ashreshte\analysis\src\utils\string" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\python\Ashreshte\analysis\data" />
+      <recent name="D:\projects\python\Ashreshte\analysis\src\core\crawler\concretes\kanoon" />
+      <recent name="D:\projects\python\Ashreshte\analysis\src\utils\structures" />
+      <recent name="D:\projects\python\Ashreshte\analysis\src\core\crawler\abstracts" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="fetcher" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Ashreshte" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/fetcher" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/fetcher/fetcher.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Ashreshte" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.fetcher" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bafc970a-eaac-4642-b7cc-0306ca2181e4" name="Default Changelist" comment="" />
+      <created>1600188222457</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600188222457</updated>
+      <workItem from="1600188228679" duration="676000" />
+      <workItem from="1600188945738" duration="2185000" />
+      <workItem from="1600349100844" duration="12396000" />
+      <workItem from="1600674312601" duration="2203000" />
+      <workItem from="1600676608144" duration="14577000" />
+      <workItem from="1600765019388" duration="2848000" />
+      <workItem from="1600924330389" duration="4520000" />
+      <workItem from="1600942924711" duration="15944000" />
+      <workItem from="1602413578388" duration="48000" />
+      <workItem from="1607883926607" duration="1252000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="570" y="234" key="#Notifications" timestamp="1607885750105">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="570" y="234" key="#Notifications/0.0.1366.738@0.0.1366.738" timestamp="1607885750105" />
+    <state x="439" y="158" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600942851177">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="439" y="158" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1600942851177" />
+    <state x="488" y="84" key="#com.intellij.ide.util.MemberChooser" timestamp="1600681157799">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="488" y="84" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1600681157799" />
+    <state x="508" y="263" width="380" height="210" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1600677218961">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="508" y="263" width="380" height="210" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.738@0.0.1366.738" timestamp="1600677218961" />
+    <state x="462" y="123" key="FileChooserDialogImpl" timestamp="1600188340761">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="462" y="123" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1600188340761" />
+    <state width="1323" height="171" key="GridCell.Tab.0.bottom" timestamp="1601015905821">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="171" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1601015905821" />
+    <state width="1323" height="171" key="GridCell.Tab.0.center" timestamp="1601015905821">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="171" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1601015905821" />
+    <state width="1323" height="171" key="GridCell.Tab.0.left" timestamp="1601015905821">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="171" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1601015905821" />
+    <state width="1323" height="171" key="GridCell.Tab.0.right" timestamp="1601015905821">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="171" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1601015905821" />
+    <state x="184" y="13" key="SettingsEditor" timestamp="1607885743604">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="13" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1607885743604" />
+    <state x="339" y="22" width="672" height="676" key="search.everywhere.popup" timestamp="1600685746366">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="22" width="672" height="676" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1600685746366" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Ashreshte$main.coverage" NAME="main Coverage Results" MODIFIED="1601015901329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Ashreshte$fetcher.coverage" NAME="fetcher Coverage Results" MODIFIED="1600675725261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/src/core/crawler/abstracts/fetcher" />
+  </component>
+</project>
